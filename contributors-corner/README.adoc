@@ -1,0 +1,71 @@
+= *Super Vision Contributors's Corner*
+Francois Nollen <FNollen.prestataire@voyages-sncf.com>
+v0.1.0, 01 mars 2016
+:encoding: UTF-8
+:toc: macro
+
+
+toc::[5]
+
+
+== Introduction
+
+This repository is dedicated to https://wiki.vsct.fr/display/SUP[Super Vision] developers and contributors. One can find shared configuration for various
+development tools, such as Maven, Git, Eclipse, IntelliJ, etc.
+
+
+== Coding
+
+=== IntelliJ
+
+==== Code styles
+
+To install Super Vision code styles (this does not permanently replace one's previous settings):
+
+. Copy file `/coding/intellij/SuperVision_IntelliJ_CodeStyles.xml` to IntelliJ `~\config\codestyles` folder (for instance
+`D:\Users\francois_nollen\.IntelliJIdea15\config\codestyles\SuperVision_IntelliJ_CodeStyles.xml`).
+. (Re)Start IntelliJ
+. Open _File > Settings... > Editor > Code Style_
+. In _Scheme_, select *SuperVision*
+
+To restore previous settings, just go back to IntelliJ settings and select previous scheme.
+
+
+=== Eclipse
+
+To install Super Vision code styles, including code formatters and cleanup configuration (this does not permanently replace one's previous settings):
+
+. In Eclipse, open _Window/Preferences_ menu.
+. In _Java/Code Style/Formatter_, _Import..._ the file `/coding/eclipse/SuperVision_Eclipse_Formatter.xml`
+. Verify that the _Active Profile_ is now *SuperVision* and save with _Apply_
+. In _Java/Code Style/Clean Up_, _Import..._ the file `/coding/eclipse/SuperVision_Eclipse_CleanUp.xml`
+. Verify that the _Active Profile_ is now *SuperVision* and save with _OK_
+
+To restore previous settings, just go back to Eclipse preferences and select previous profiles.
+
+== Versionning
+
+=== Git
+
+See `/versionning/git/`
+
+TODO: document setup
+
+
+== Building
+
+=== Maven
+
+A Maven personal `settings.xml` template is available in `/building/maven/` folder.
+This configuration includes:
+
+* Default mirroring of everything to the http://nexus:50080/content/groups/public/[VSCT-Nexus _public_ repository group]
+* Active-by-default _env-dev-local_ Maven profile, adding Super Vision repositories
+* Configuration template to deploy artifacts to Super Vision repositories (one must set its own user and password first)
+
+One may use this Maven personal configuration by copying the file to one's `~/.m2/settings.xml` location (overriding
+`$M2_HOME/conf/settings.xml` is not recommended).
+
+== Questions? Support?
+
+Feel free to contact VSCT_SUPERVISION_CORETEAM@voyages-sncf.com.
